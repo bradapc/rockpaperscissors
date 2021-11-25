@@ -21,33 +21,50 @@ function playerChoose() {
 }
 
 function rockPaperScissors(playerChoice, computerChoice) {
-    console.log(playerChoice);
-    console.log(computerChoice);
     if(playerChoice === "rock") {
         if(computerChoice === "rock") {
-            return "Tie game! Rock vs. rock";
+            console.log("Tie game! Rock vs. rock");
         } else if(computerChoice === "scissors") {
-            return "You win! Rock beats scissors!";
+            console.log("You win! Rock beats scissors!");
+            return playerScore++;
         } else if(computerChoice === "paper") {
-            return "You lose! Paper beats rock!";
+            console.log("You lose! Paper beats rock!");
+            return computerScore++;
         }
     } else if(playerChoice === "paper") {
         if(computerChoice === "rock") {
-            return "You win! Paper beats rock!";
+            console.log("You win! Paper beats rock!");
+            return playerScore++;
         } else if(computerChoice === "paper") {
-            return "Tie game! Paper vs. paper";
+            console.log("Tie game! Paper vs. paper");
         } else if(computerChoice === "scissors") {
-            return "You lose! Scissors beats paper!";
+            console.log("You lose! Scissors beats paper!");
+            return computerScore++;
         }
     } else if(playerChoice === "scissors") {
         if(computerChoice === "rock") {
-            return "You lose! Rock beats scissors!";
+            console.log("You lose! Rock beats scissors!");
+            return computerScore++;
         } else if(computerChoice === "paper") {
-            return "You win! Scissors beats paper!";
+            console.log("You win! Scissors beats paper!");
+            return playerScore++;
         } else if(computerChoice === "scissors") {
-            return "Tie game! Scissors vs. scissors";
+            console.log("Tie game! Scissors vs. scissors");
         }
     }
 }
+let playerScore = 0;
+let computerScore = 0;
+function game() {
+    do {
+        rockPaperScissors(playerChoose(), computerPlay());
+        console.log(`Score: ${playerScore} You ${computerScore} Computer`);
+    } while(playerScore < 5 && computerScore < 5);
+    if(playerScore == 5) {
+        console.log(`You won! Final score:\n ${playerScore} You ${computerScore} Computer`);
+    } else if(computerScore == 5) {
+        console.log(`You lost. Final score:\n ${playerScore} You ${computerScore} Computer`);
+    }
+}
 
-console.log(rockPaperScissors(playerChoose(), computerPlay()));
+game();
