@@ -1,0 +1,38 @@
+.play-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.results h1, h2 {
+    margin: 4px 0;
+}
+
+button {
+    background-color: #a2ffef;
+    color: black;
+    font-family: Verdana;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #87ffea;
+}
+
+button:active {
+    background-color: #2effdb;
+}
